@@ -1,17 +1,34 @@
 <?php
-
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Author: Sarah Kurt
+ * Date: 04/15/14
+ * Name: index_view.class.php
+ * Description: the parent class for all view classes. The two functions display page header and footer.
  */
 
-/**
- * Description of index_view
- *
- * @author Forrest
- */
-class index_view {
-    //put your code here
+class IndexView {
+
+    //this method displays the page header
+    protected function displayHeader($title) {
+        ?>
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <title> <?php echo $title ?> </title>
+            </head>
+            <body>
+                <a href="<?= base_url ?>/index.php" style="text-decoration: none" title="Music Library"></a>
+
+                <?php
+            }
+
+            //this method displays the page footer
+            protected function displayFooter() {
+                ?> 
+        </body>
+        </html>
+        <?php
+    }
+
+
 }
-
-?>
