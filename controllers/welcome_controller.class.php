@@ -10,8 +10,13 @@
  *
  * @author Forrest
  */
-class welcome_controller {
-    //put your code here
+class welcomeController {
+    
+    public function index() {
+        $view = new Welcome_Index();
+        $view->display();
+    }
+    
 }
 
 ?>
