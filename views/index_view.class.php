@@ -15,20 +15,36 @@ class IndexView {
         <html>
             <head>
                 <title> <?php echo $title ?> </title>
+                <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+                <link rel='shortcut icon' href='<?= base_url ?>/www/img/favicon.ico' type='image/x-icon'>
+                <link type='text/css' rel='stylesheet' href='<?= base_url ?>/www/css/app_style.css'>
             </head>
             <body>
-                <a href="<?= base_url ?>/index.php" style="text-decoration: none" title="Music Library"></a>
+               <!------------------------------------------------------------ 
+               
+               
+               ------------ Code for the Common Header goes here ------------
+               
+               
+               ------------------------------------------------------------->
 
                 <?php
-            }
+            }//End of Common Header
 
             //this method displays the page footer
             protected function displayFooter() {
                 ?> 
+               <!------------------------------------------------------------ 
+               
+               
+               ------------ Code for the Common Footer goes here ------------
+               
+               
+               ------------------------------------------------------------->
         </body>
         </html>
         <?php
-    }
+    }//End of Common Footer
 
 
 }
