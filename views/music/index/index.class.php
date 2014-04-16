@@ -5,7 +5,7 @@
  * Name: index.class.php
  */
 
-class Movie_Index extends MusicIndexView {
+class Music_Index extends MusicIndexView {
 
      // display accepts an array of music objects and displays them in a table.
     
