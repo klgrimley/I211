@@ -17,7 +17,7 @@ class Music {
 
     //the constructor
     public function __construct($song_name, $album, $artist, $release_date, $genre, $image, $description, $audio) {
-        $this->song_name = $title;
+        $this->song_name = $song_name;
         $this->album = $album;
         $this->artist = $artist;
         $this->release_date = $release_date;

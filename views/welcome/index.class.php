@@ -17,7 +17,7 @@ class Welcome_Index extends IndexView {
         
            
                         <ul>
-                            <li><a href="<?= base_url ?>/music/index/">Listen to music</a></li>
+                            <li><a href="<?= base_url ?>/music/index">Listen to music</a></li>
                             <li>Stream music</li>
                         </ul>
                    

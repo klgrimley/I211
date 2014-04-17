@@ -11,7 +11,7 @@ class Music_Index extends MusicIndexView {
     
 
     public function display($music) {
-        displayHeader("List All Music");
+        parent::displayHeader("List All Music");
    
 
         ?>
@@ -47,3 +47,4 @@ class Music_Index extends MusicIndexView {
     }
 //end of display method
 }
+?>
