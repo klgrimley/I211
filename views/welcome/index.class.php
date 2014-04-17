@@ -24,7 +24,7 @@ class Welcome_Index extends IndexView {
 <link href='http://fonts.googleapis.com/css?family=Dosis:200,400' rel='stylesheet' type='text/css'>
 </head>
 
-<body bgcolor="#ff3333">
+<body bgcolor="#c33">
 <div id="header">
 <div id="logo">
 <img src="includes/images/title.gif" width="204" height="68">
