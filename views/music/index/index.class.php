@@ -18,38 +18,29 @@ class Music_Index extends MusicIndexView {
         <div id="main_header">Music in My Library</div>
 
  
-        <!-- display the table header -->
-        <table cellspacing='0' cellpadding='3' border='0' width="100%" id="list">
-            <tr>
-                <th width="300" class="hilite1">Song Name</th>
-                <th width="80" class="hilite1">Artist</th>
-                <th width="100" class="hilite1">Album</th>
-                <th width="" class="hilite1">More Information</th>
-            </tr>
+        <!-- 
+        
+            Some kind of fun introduction 
+        
+        -->
+       
 
             <?php
             //insert one row into the table for each movie
             foreach ($music as $count => $music) {
-                $song_name = $music->getSongName();
+                $id = $id->getId();
                 $artist = $music->getArtist();
                 $album = $music->getAlbum();
-                $details = $music->getDetails();
+                $album_art = $music->getAlbumArt();
                 
                 //apply the class 'alt_background' for alternate rows
-                if($count%2 == 1)
-                    echo "<tr class='alt_background'>";
-                else
-                    echo "<tr>";
-                echo "<td>$song_name</td>";
-                echo "<td>$artist</td>";
-                echo "<td>$album</td>";
-                echo "<td><a href='" . base_url . "/music/detail/$id'>More about<i> $song_name</i></a></td>";
-                echo "</tr>";
+                echo "<div class='album'>";
+                echo "<p><a href='" . base_url . "/music/detail/$id'>$album_art</a></p>";
+                echo "<p>$artist</p>";
+                echo "<p>$album</p>";
+                echo "</div>";
             }
-            ?>
-            <!-- the end of the table -->
-        </table>
-        <?php
+            
         parent::displayFooter();
         
 
