@@ -1,11 +1,9 @@
 <?php
 
-/*
- * Author: Louie Zhu
- * Date: 03/25/2014
- * File: database.php
- * Description: Description: the Database class sets the datbase details.
- * 
+/**
+ * Description of database
+ *
+ * @author Kevin Grimley
  */
 
 class Database {
