@@ -16,20 +16,10 @@ class Welcome_Index extends IndexView {
            
 
 
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Listen Up</title>
-<link href="includes/style.css" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Dosis:200,400' rel='stylesheet' type='text/css'>
-</head>
+
 
 <body bgcolor="#c33">
-<div id="header">
-<div id="logo">
-<img src="includes/images/title.gif" width="204" height="68">
-</div>
-</div>
+
 
 <div id="wrapper">
 

@@ -1,17 +1,11 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of dispatcher
  *
  * @author Forrest
  */
 class Dispatcher {
-    //put your code here
     //dispatch request to the appropriate controller/method
     public static function dispatch() {
         //split the uri into url and querystrings
@@ -48,5 +42,3 @@ class Dispatcher {
         $controller->$method($arg);
     }
 }
-
-?>

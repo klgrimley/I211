@@ -1,16 +1,18 @@
 <?php
 /*
- * Author: Sarah Kurt
- * Date: April 14, 2014
+ * Author: Kevin Grimley
+ * Date: April 5, 2014
  * File: error.class.php
+ * Description:
+ *
  */
 
-class Music_Error extends MusicIndexView {
+class Book_Error extends BookIndexView {
 
     public function display($message) {
 
         //display page header
-        displayHeader("Error");
+        parent::displayHeader("Error");
         ?>
 
         <div id="main_header">Error</div>
@@ -18,7 +20,7 @@ class Music_Error extends MusicIndexView {
         <table style="width: 100%; border: none">
             <tr>
                 <td style="vertical-align: middle; text-align: center; width:100px">
-                    <? //<img src='<?= base_url ?>/www/img/error.jpg' style="width: 80px; border: none"/>
+                    <img src='<?= base_url ?>/www/img/error.jpg' style="width: 80px; border: none"/>
                 </td>
                 <td style="text-align: left; vertical-align: top;">
                     <h3> We're sorry, but an error has occurred.</h3>
@@ -31,7 +33,7 @@ class Music_Error extends MusicIndexView {
             </tr>
         </table>
         <hr>
-        <a href="<?= base_url ?>/music/index">Back to music list</a>
+        <a href="<?= base_url ?>/book/index">Back to book list</a>
         <?php
         //display page footer
         parent::displayFooter();

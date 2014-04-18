@@ -1,21 +1,16 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of autoloader
  *
  * @author Forrest
  */
 
-    // register autoload() method of the Autoloader class
-    spl_autoload_register('Autoloader::autoload');
-   
+// register autoload() method of the Autoloader class
+spl_autoload_register('Autoloader::autoload');
+
 class Autoloader {
-    //put your code here
+
     //autoload specified file
     public static function autoload($class) {
         //split the class name by the underscore.
@@ -79,4 +74,3 @@ class Autoloader {
     }
 
 }
-?>

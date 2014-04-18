@@ -16,17 +16,15 @@ class IndexView {
             <head>
                 <title> <?php echo $title ?> </title>
                 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-                <link rel='shortcut icon' href='<?= base_url ?>/www/img/favicon.ico' type='image/x-icon'>
-                <link type='text/css' rel='stylesheet' href='<?= base_url ?>/www/css/app_style.css'>
+                <link rel='shortcut icon' href='<?= base_url ?> ' type='image/x-icon'>
+                <link type='text/css' rel='stylesheet' href='<?= base_url ?>/includes/style.css'>
             </head>
             <body>
-               <!------------------------------------------------------------ 
-               
-               
-               ------------ Code for the Common Header goes here ------------
-               
-               
-               ------------------------------------------------------------->
+               <div id="header">
+                    <div id="logo">
+                        <img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" />
+                    </div>
+                </div>
 
                 <?php
             }//End of Common Header

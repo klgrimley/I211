@@ -48,15 +48,17 @@ class Database {
         return $this->objDBConnection;
     }
 
-    //returns the name of the table that stores movies
+    //returns the name of the table that stores music
     public function getMusicTable() {
         return $this->param['tblMusic'];
     }
 
-    //returns the name of the table that stores books
+    //returns the name of the table that stores users
     public function getUserTable() {
         return $this->param['tblUser'];
     }
+
+    
 
 }
 

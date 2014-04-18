@@ -1,71 +1,65 @@
 <?php
 /*
- * Author: Sarah Kurt
- * Date: 04//201
- * Name: detail.class.php
+ * Author: Kevin Grimley
+ * Date: April 5, 2014
+ * Name: view_movie.class.php
  * Description: This class defines a method "display".
+ *              The method accepts a Movie object and displays the details of the movie in a table.
  */
 
-class Music_Detail extends MusicIndexView {
+class Book_Detail extends BookIndexView {
 
-    public function display($music) {
-        displayHeader("Display Music Details");
-       
+    public function display($book) {
+        //display page header
+        parent::displayHeader("Book Details");
 
-
-        //retrieve music details by calling get methods
-        $id = $music->getId();
-        $song_name = $music->getSongName();
-        $album = $music->getAlbum();
-        $artist = $movie->getRelease_date();
-        $release_date = $music->getReleaseDate();
-        $genre = $music->getGenre();
-        $image = $music->getImage();
-        $description = $music->getDescription();
-        $audio = $music->getAudio();
-        
-        //description, audio
-        
+        //retrieve movie details by calling get methods
+        $id = $book->getId();
+        $title = $book->getTitle();
+        $isbn = $book->getIsbn();
+        $publish_date = $book->getPublish_date();
+        $publisher = $book->getPublisher();
+        $category = $book->getCategory();
+        $image = $book->getImage();
+        $description = $book->getDescription();
         ?>
 
-        <div id="main_header">Music Details</div>
+        <div id="main_header">Book Details</div>
 
-        <!-- display music details -->
+        <!-- display movie details -->
         <div id="detail">
-            <? // <div class="image"><img src="<?= base_url ?>/www/<?= $image ?>" alt="<?= $song_name ?>" title="<?= $title ?>"></div>
+            <div class="image"><img src="<?= base_url ?>/www/img/books/<?= $image ?>" alt="<?= $title ?>" title="<?= $title ?>"></div>
             <table>
                 <tr>
-                    <td class="heading"><strong>Song Name:</strong></td>
-                    <td><?= $song_name ?></td>
+                    <td class="heading"><strong>Title:</strong></td>
+                    <td><?= $title ?></td>
                 </tr>
                 <tr>
-                    <td><strong>Album:</strong></td>
-                    <td><?= $album ?></td>
+                    <td><strong>ISBN:</strong></td>
+                    <td><?= $isbn ?></td>
                 </tr>
                 <tr>
-                    <td><strong>Artist:</strong></td>
-                    <td><?= $artist ?></td>
+                    <td><strong>Publish Date:</strong></td>
+                    <td><?= $publish_date ?></td>
                 </tr>
                 <tr>
-                    <td><strong>Release Date:</strong></td>
-                    <td><?= $release_date ?></td>
+                    <td><strong>Publisher:</strong></td>
+                    <td><?= $publisher ?></td>
                 </tr>
                 <tr>
-                    <td><strong>Genre: </strong></td>
-                    <td><?= $genre ?></td>
+                    <td><strong>Category:</strong></td>
+                    <td><?= $category ?></td>
+                </tr>
+                <tr>
+                    <td class="description"><strong>Description: </strong></td>
+                    <td><?= $description ?></td>
                 </tr>
             </table>
-            <div class="buttons">
-                <input type="button" value="  Edit   " onclick='window.location.href = "<?= base_url . "/music/edit/" . $id ?>"' />&nbsp;
-                <input type="button" value="Delete" onclick='window.location.href = "<?= base_url . "/music/delete/" . $id ?>"' />
-            </div>
         </div>
-        <a href="<?= base_url ?>/music/index">Back to music list</a>
-
+        <a href="<?= base_url ?>/book/index">Back to book list</a>
         <?php
+        //display page footer
         parent::displayFooter();
-       
-
     }
 
 //end of display method

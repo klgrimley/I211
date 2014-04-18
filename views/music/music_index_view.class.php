@@ -1,38 +1,28 @@
 <?php
-
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Author: Sarah Kurt
+ * Date: 04/15/14
+ * Name: index.class.php
  */
 
-/**
- * Description of music_index_view
- *
- * @author Forrest
- */
 class MusicIndexView extends IndexView {
 
     protected function displayHeader($title) {
-        parent::displayHeader($title);
+        parent::displayHeader($title)
         ?>
-        <script>
-            var suggest_url = "<?= base_url ?>/music/suggest/"; 
-        </script>
         <!--create the search bar -->
-        <div id="searchbar">
-            <form method="get" action="<?= base_url ?>/movie/search">
-                Search movie by title: <input name="title" id="title" onkeyup="handleKeyUp(event)" />
-                <input type="submit" value="Go" />
+        <!--<div id="searchbar">
+            <form method="get" action="<?= base_url ?>/music/search">
+                Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)"  disabled="disabled"/>
+                <input type="submit" value="Go"  disabled="disabled" />
             </form>
             <div id="suggestionDiv"></div>
-        </div>
+        </div>-->
         <?php
     }
-
+    
     protected function displayFooter() {
         parent::displayFooter();
     }
-
 }
-
 ?>

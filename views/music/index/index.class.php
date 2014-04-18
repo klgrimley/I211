@@ -15,7 +15,7 @@ class Music_Index extends MusicIndexView {
    
 
         ?>
-        <div id="main_header">Music in My Library</div>
+        <h2 id="main_header">Fun Stuff To Listen To</h2>
 
  
         <!-- 
@@ -28,16 +28,18 @@ class Music_Index extends MusicIndexView {
             <?php
             //insert one row into the table for each movie
             foreach ($music as $count => $music) {
-                $id = $id->getId();
+                //$id = $id->getId();
                 $artist = $music->getArtist();
                 $album = $music->getAlbum();
-                $album_art = $music->getAlbumArt();
+                $album_art = $music->getImage();
+                $song = $music->getSongName();
                 
                 //apply the class 'alt_background' for alternate rows
                 echo "<div class='album'>";
-                echo "<p><a href='" . base_url . "/music/detail/$id'>$album_art</a></p>";
-                echo "<p>$artist</p>";
-                echo "<p>$album</p>";
+                echo "<p><img src='" . base_url . "/includes/album_art/$album_art' /></p>";
+                echo "<p>Band Name: $artist</p>";
+                echo "<p>Album: $album</p>";
+                echo "<p>Track Title: $song</p>";
                 echo "</div>";
             }
             
