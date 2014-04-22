@@ -22,7 +22,15 @@ class IndexView {
             <body>
                <div id="header">
                     <div id="logo">
-                        <img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" />
+                        <a href="<?= base_url ?>/index"><img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" /></a>
+                    </div>
+                   <!--create the search bar -->
+                    <div id="searchbar">
+                        <form method="get" action="<?= base_url ?>/album/search">
+                            Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)"  disabled="disabled"/>
+                            <input type="submit" value="Go"  disabled="disabled" />
+                        </form>
+                        <div id="suggestionDiv"></div>
                     </div>
                 </div>
 

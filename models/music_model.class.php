@@ -29,27 +29,26 @@ class MusicModel {
     }
 
     /*
-     * the list_movie method retrieves all movies from the database and
-     * returns an array of Movie objects if successful or false if failed.
-     * Movies should also be filtered by ratings and/or sorted by titles or rating if they are available.
+     * the list_music method retrieves all songs from the database and
+     * returns an array of Music objects if successful or false if failed.
      */
 
     public function list_music() {
         //Construct the MySQL select statement.
-        $sql = "SELECT * FROM " . $this->db->getMusicTable();
+        $sql = "SELECT * FROM " . $this->db->getSongsTable();
 
         //execute the query
         $query = $this->dbConnection->query($sql);
         
         //handle the result
         if ($query && $query->num_rows > 0) {
-            //create an array to store all returned movies
+            //create an array to store all returned information
             $songs = array();
 
             //loop through all rows in the returned recordsets
             while ($query_row = $query->fetch_assoc()) {
 
-                //create a Movie object
+                //create a Music object
                 $song = new Music($query_row['song_name'],
                                 $query_row['album'],
                                 $query_row['artist'],
@@ -60,7 +59,7 @@ class MusicModel {
                                 $query_row['audio']);
                 
 
-                //set the id for the movie
+                //set the id for the song
                 $song->setId($query_row["id"]);
                 //add the movie into the array
                 $songs[] = $song;
@@ -72,34 +71,36 @@ class MusicModel {
     }
 
     /*
-     * the view_music method retrieves the details of the movie specified by its id
-     * and returns a music object. Return false if failed.
+     * the view_music method needs serious work
      */
 
     public function view_music($id) {
         //the select ssql statement
-        $sql = "SELECT * FROM " . $this->db->getMusicTable() . " WHERE id='$id'";
+        $sql = "SELECT * FROM " . $this->db->getSongsTable() . " WHERE album='$id'";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
 
         if ($query && $query->num_rows > 0) {
-            $query_row = $query->fetch_assoc();
+            
+            $songs = array();
+            
+            while ($query_row = $query->fetch_assoc()) {
 
-            //create a movie object
+            //create a music object
             $song = new Music($query_row['song_name'],
                                 $query_row['album'],
-                                $query_row['artist'],
-                                $query_row['release_date'],
-                                $query_row['genre'],
-                                $query_row['image'],
-                                $query_row['description'],
+                                //$query_row['artist'],
+                                //$query_row['release_date'],
+                                //$query_row['genre'],
+                                //$query_row['image'],
+                                //$query_row['description'],
                                 $query_row['audio']);
-
+            $songs[] = $song;
             //set the id for the movie
-            $song->setId($query_row["id"]);
-
-            return $song;
+            //$song->setId($query_row["id"]);
+            }
+            return $songs;
         }
 
         return false;

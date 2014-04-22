@@ -7,56 +7,34 @@
  *              The method accepts a Movie object and displays the details of the movie in a table.
  */
 
-class Book_Detail extends BookIndexView {
+class Music_Detail extends IndexView {
 
-    public function display($book) {
+    public function display($song) {
         //display page header
-        parent::displayHeader("Book Details");
+        parent::displayHeader("Album Details");
 
-        //retrieve movie details by calling get methods
-        $id = $book->getId();
-        $title = $book->getTitle();
-        $isbn = $book->getIsbn();
-        $publish_date = $book->getPublish_date();
-        $publisher = $book->getPublisher();
-        $category = $book->getCategory();
-        $image = $book->getImage();
-        $description = $book->getDescription();
+        //retrieve album details by calling get methods
+        
         ?>
 
-        <div id="main_header">Book Details</div>
+        <div id="main_header">Album Details</div>
 
-        <!-- display movie details -->
-        <div id="detail">
-            <div class="image"><img src="<?= base_url ?>/www/img/books/<?= $image ?>" alt="<?= $title ?>" title="<?= $title ?>"></div>
-            <table>
-                <tr>
-                    <td class="heading"><strong>Title:</strong></td>
-                    <td><?= $title ?></td>
-                </tr>
-                <tr>
-                    <td><strong>ISBN:</strong></td>
-                    <td><?= $isbn ?></td>
-                </tr>
-                <tr>
-                    <td><strong>Publish Date:</strong></td>
-                    <td><?= $publish_date ?></td>
-                </tr>
-                <tr>
-                    <td><strong>Publisher:</strong></td>
-                    <td><?= $publisher ?></td>
-                </tr>
-                <tr>
-                    <td><strong>Category:</strong></td>
-                    <td><?= $category ?></td>
-                </tr>
-                <tr>
-                    <td class="description"><strong>Description: </strong></td>
-                    <td><?= $description ?></td>
-                </tr>
-            </table>
+        <!-- display album details -->
+        Songs:
+        <div class='song_list'>
+        <ul>
+        <?php
+        foreach ($song as $count => $song) {
+                //$id = $id->getId();
+                $song_title = $song->getSongName();
+                $audio = $song->getAudio();
+                
+                echo "<li><a href='". ABSOLUTE_PATH ."'/includes/audio/$audio>$song_title</a></li>";
+            }
+        ?>
+        </ul>
         </div>
-        <a href="<?= base_url ?>/book/index">Back to book list</a>
+        <a href="<?= base_url ?>/album/index">Back to album list</a>
         <?php
         //display page footer
         parent::displayFooter();

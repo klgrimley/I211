@@ -12,13 +12,13 @@ class MusicController {
 
     //default constructor
     public function __construct() {
-        //create an instance of the MovieModel class
+        //create an instance of the MusicModel class
         $this->music_model = new MusicModel();
     }
 
-    //index action that displays all movies
+    //index action that displays all songs
     public function index() {
-        //retrieve all movies and store them in an array
+        //retrieve all songs and store them in an array
         $music = $this->music_model->list_music();
 
         //disply all movies
@@ -34,7 +34,7 @@ class MusicController {
 
     //show details of a album
     public function detail($id) {
-        //retrieve the specific movie
+        //retrieve the specific album
         $music = $this->music_model->view_music($id);
         
         //display movie details

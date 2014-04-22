@@ -25,7 +25,7 @@ class Dispatcher {
             array_shift($url_array);
 
         //get controller name or assign the default controller "WelcomeController"
-        $controllerName = !empty($url_array[0]) ? ucfirst($url_array[0]) . 'Controller' : 'WelcomeController';
+        $controllerName = !empty($url_array[0]) ? ucfirst($url_array[0]) . 'Controller' : 'AlbumController';
 
         //get method name or assign the default method "index"
         $method = !empty($url_array[1]) ? $url_array[1] : 'index';

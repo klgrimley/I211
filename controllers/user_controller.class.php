@@ -5,7 +5,7 @@
  *
  */
 
-class StreamController {
+class UserController {
 
  
 }

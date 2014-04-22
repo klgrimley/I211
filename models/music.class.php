@@ -9,16 +9,11 @@
 class Music {
 
     //private data members
-    private $id, $song_name, $album, $artist, $release_date, $genre, $image, $description, $audio;
+    private $id, $song_name, $album, $audio;
 
-    public function __construct($song_name, $album, $artist, $release_date, $genre, $image, $description, $audio) {
+    public function __construct($song_name, $album, $audio) {
         $this->song_name = $song_name;
         $this->album = $album;
-        $this->artist = $artist;
-        $this->release_date = $release_date;
-        $this->genre = $genre;
-        $this->image = $image;
-        $this->description = $description;
         $this->audio = $audio;
     }
     
@@ -35,26 +30,6 @@ class Music {
         return $this->album;
     }
 
-    public function getArtist() {
-        return $this->artist;
-    }
-
-    public function getReleaseDate() {
-        return $this->release_date;
-    }
-
-    public function getGenre() {
-        return $this->genre;
-    }
-
-    public function getImage() {
-        return $this->image;
-    }
-
-    public function getDescription() {
-        return $this->description;
-    }
-    
     public function getAudio() {
         return $this->audio;
     }

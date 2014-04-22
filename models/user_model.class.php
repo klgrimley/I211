@@ -6,6 +6,6 @@
  * @author Forrest
  */
 
-class StreamModel {
+class UserModel {
 
 }

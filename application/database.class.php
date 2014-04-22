@@ -14,7 +14,8 @@ class Database {
         'login' => 'phpuser',
         'password' => 'phpuser',
         'database' => 'musictime',
-        'tblMusic' => 'songs',
+        'tblSongs' => 'songs',
+        'tblAlbums' => 'albums',
         'tblUser' => 'users'
     );
     //define the database connection object
@@ -47,10 +48,15 @@ class Database {
     public function getConnection() {
         return $this->objDBConnection;
     }
+    
+    //returns the name of the table that stores albums
+    public function getAlbumsTable() {
+        return $this->param['tblAlbums'];
+    }
 
     //returns the name of the table that stores music
-    public function getMusicTable() {
-        return $this->param['tblMusic'];
+    public function getSongsTable() {
+        return $this->param['tblSongs'];
     }
 
     //returns the name of the table that stores users

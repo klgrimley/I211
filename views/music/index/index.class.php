@@ -26,7 +26,7 @@ class Music_Index extends MusicIndexView {
        
 
             <?php
-            //insert one row into the table for each movie
+            //insert a new song for each record
             foreach ($music as $count => $music) {
                 //$id = $id->getId();
                 $artist = $music->getArtist();
@@ -34,9 +34,9 @@ class Music_Index extends MusicIndexView {
                 $album_art = $music->getImage();
                 $song = $music->getSongName();
                 
-                //apply the class 'alt_background' for alternate rows
+                //
                 echo "<div class='album'>";
-                echo "<p><img src='" . base_url . "/includes/album_art/$album_art' /></p>";
+                echo "<p><a href='" . base_url . "/music/index/#'><img src='" . base_url . "/includes/album_art/$album_art' /></a></p>";
                 echo "<p>Band Name: $artist</p>";
                 echo "<p>Album: $album</p>";
                 echo "<p>Track Title: $song</p>";

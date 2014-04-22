@@ -6,7 +6,7 @@
  * @author Forrest
  */
 
-class Stream {
+class User {
 
     //private data members
     private $id, $song_name, $album, $artist, $release_date, $genre, $image, $description, $audio;
