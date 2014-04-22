@@ -28,7 +28,7 @@ class IndexView {
                     <div id="searchbar">
                         <form method="get" action="<?= base_url ?>/album/search">
                             Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)" />
-                            <input type="submit" value="Go"  disabled="disabled" />
+                            <input type="submit" value="Go" />
                         </form>
                         <div id="suggestionDiv"></div>
                     </div>

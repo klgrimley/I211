@@ -28,6 +28,10 @@ class AlbumController {
             $this->error($message);
         }
     }
+    
+    public function search() {
+        
+    }
 }
 
 ?>
