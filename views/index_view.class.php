@@ -2,8 +2,8 @@
 /*
  * Author: Sarah Kurt
  * Date: 04/15/14
- * Name: index_view.class.php
- * Description: the parent class for all view classes. The two functions display page header and footer.
+ * Name: edit.class.php
+ * Description: Allows admins to edit the site
  */
 
 class IndexView {
@@ -30,10 +30,7 @@ class IndexView {
                             Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)" />
                             <input type="submit" value="Go" />
                         </form>
-                        <form method="get" action="<?= base_url ?>/user/login">
-                            Login: <input name="user" id="user" onkeyup="handleKeyUp(event)" />
-                            <input type="submit" value="Go" />
-                        </form>
+                        <div id="login_div"><a href="#"><h3 id="login_button">Login</h3></a></div>
                         <div id="suggestionDiv"></div>
                     </div>
                 </div>
