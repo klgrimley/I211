@@ -11,59 +11,47 @@ class User {
     //private data members
     private $id, $username, $first_name, $last_name, $email, $password, $role;
 
-    public function __construct($song_name, $album, $artist, $release_date, $genre, $image, $description, $audio) {
-        $this->song_name = $song_name;
-        $this->album = $album;
-        $this->artist = $artist;
-        $this->release_date = $release_date;
-        $this->genre = $genre;
-        $this->image = $image;
-        $this->description = $description;
-        $this->audio = $audio;
+    public function __construct($username, $first_name, $last_name, $email, $password, $role) {
+        $this->username = $username;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->email = $email;
+        $this->password = $password;
+        $this->role = $role;
     }
     
-    //getter methods
     public function getId() {
         return $this->id;
     }
-    
-    public function getSongName() {
-        return $this->song_name;
+
+    public function getUsername() {
+        return $this->username;
     }
 
-    public function getAlbum() {
-        return $this->album;
+    public function getFirstName() {
+        return $this->first_name;
     }
 
-    public function getArtist() {
-        return $this->artist;
+    public function getLastName() {
+        return $this->last_name;
     }
 
-    public function getReleaseDate() {
-        return $this->release_date;
+    public function getEmail() {
+        return $this->email;
     }
 
-    public function getGenre() {
-        return $this->genre;
+    public function getPassword() {
+        return $this->password;
     }
 
-    public function getImage() {
-        return $this->image;
+    public function getRole() {
+        return $this->role;
     }
 
-    public function getDescription() {
-        return $this->description;
-    }
-    
-    public function getAudio() {
-        return $this->audio;
-    }
-
-
-    //set book id
     public function setId($id) {
         $this->id = $id;
     }
-    
+
+
 
 }
