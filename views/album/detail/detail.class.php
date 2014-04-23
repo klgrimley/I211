@@ -17,7 +17,12 @@ class Album_Detail extends IndexView {
         
         ?>
 
-        <div id="main_header">Album Details</div>
+        <div id="main_header">
+            <?php
+                 $album_title = $musics[0]['album_title'];
+                 echo "<h3>$album_title</h3>";
+            ?>
+        </div>
 
         <!-- display album details -->
         Songs:
@@ -32,10 +37,10 @@ class Album_Detail extends IndexView {
                 echo "<li><a href='". ABSOLUTE_PATH ."'/includes/audio/$audio>$song_title</a></li>";
             }
             $image = $musics[0]['image'];
-            $album_title = $musics[0]['album_title'];
             
-            echo "$image";
-            echo $album_title;
+            
+            echo "<img src='" . base_url . "/includes/album_art/$image' /></a></p>";
+           
         ?>
         </ul>
         </div>
