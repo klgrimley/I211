@@ -118,3 +118,15 @@ h3#login_button  {
 .album_cover {
     margin-right: 5%;
 }
+
+footer {
+    margin: 75px 0 0 0;
+    background-color:#cc3333;
+}
+
+footer h6 {
+    margin: 0;
+    font-variant: small-caps;
+    text-align: center;
+    padding: 40px;
+}

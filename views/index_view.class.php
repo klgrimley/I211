@@ -21,11 +21,11 @@ class IndexView {
                 <script src="<?= base_url ?>/includes/js/ajax_autosuggestion.js"></script>
             </head>
             <body>
-               <div id="header">
+                <div id="header">
                     <div id="logo">
                         <a href="<?= base_url ?>/index"><img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" /></a>
                     </div>
-                   <!--create the search bar -->
+                    <!--create the search bar -->
                     <div id="searchbar">
                         <form method="get" action="<?= base_url ?>/song/search">
                             Find the song you're looking for: <input name="song" id="song" onkeyup="handleKeyUp(event)" />
@@ -37,22 +37,19 @@ class IndexView {
                 </div>
 
                 <?php
-            }//End of Common Header
+            }
 
+//End of Common Header
             //this method displays the page footer
             protected function displayFooter() {
                 ?> 
-               <!------------------------------------------------------------ 
-               
-               
-               ------------ Code for the Common Footer goes here ------------
-               
-               
-               ------------------------------------------------------------->
-        </body>
+                <footer>
+                    <h6>Copyright 2014 by Listen UP</h6>
+                </footer>
+            </body>
         </html>
         <?php
-    }//End of Common Footer
+    }
 
-
+//End of Common Footer
 }
