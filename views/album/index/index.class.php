@@ -36,7 +36,7 @@ class Album_Index extends IndexView {
                 $genre = $album->getGenre();
                 
                 echo "<div class='album'>";
-                echo "<p><a href='" . base_url . "/music/detail/$id'><img src='" . base_url . "/includes/album_art/$album_art' /></a></p>";
+                echo "<p><a href='" . base_url . "/album/detail/$id'><img src='" . base_url . "/includes/album_art/$album_art' /></a></p>";
                 echo "<h3 class='albums_page'>Band Name:</h3>$artist";
                 echo "<h3 class='albums_page'>Album:</h3>$album_title";
                 echo "<h3 class='albums_page'>Genre:</h3>$genre";

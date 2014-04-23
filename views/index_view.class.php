@@ -30,6 +30,10 @@ class IndexView {
                             Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)" />
                             <input type="submit" value="Go" />
                         </form>
+                        <form method="get" action="<?= base_url ?>/user/login">
+                            Login: <input name="user" id="user" onkeyup="handleKeyUp(event)" />
+                            <input type="submit" value="Go" />
+                        </form>
                         <div id="suggestionDiv"></div>
                     </div>
                 </div>

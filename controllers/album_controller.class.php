@@ -32,6 +32,23 @@ class AlbumController {
     public function search() {
         
     }
+    
+    //show details of a album
+    public function detail($id) {
+        //retrieve the specific album
+        $musics = $this->album_model->view_album($id);
+        
+        //display movie details
+        if ($musics) {
+            //display movie details
+            $view = new Album_Detail();
+            $view->display($musics);
+        } else {
+            //display an error
+            $message = "There was a problem displaying the music. The music id '" . $id . "' does not exist in the database.";
+            $this->error($message);
+        }
+    }
 }
 
 ?>

@@ -35,13 +35,13 @@ class MusicController {
     //show details of a album
     public function detail($id) {
         //retrieve the specific album
-        $music = $this->music_model->view_music($id);
+        $musics = $this->music_model->view_music($id);
         
         //display movie details
-        if ($music) {
+        if ($musics) {
             //display movie details
             $view = new Music_Detail();
-            $view->display($music);
+            $view->display($musics);
         } else {
             //display an error
             $message = "There was a problem displaying the music. The music id '" . $id . "' does not exist in the database.";

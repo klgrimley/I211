@@ -76,27 +76,30 @@ class MusicModel {
 
     public function view_music($id) {
         //the select ssql statement
-        $sql = "SELECT * FROM " . $this->db->getSongsTable() . " WHERE album='$id'";
+        $sql = "SELECT *
+FROM albums a, songs s
+WHERE a.album_id = $id
+AND a.album_id = s.album";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
 
         if ($query && $query->num_rows > 0) {
             
-            $songs = array();
+            $musics = array();
             
             while ($query_row = $query->fetch_assoc()) {
 
             //create a music object
-            $song = new Music($query_row['song_name'],
+            $music = new Music($query_row['song_name'],
                                 $query_row['album'],
-                                //$query_row['artist'],
-                                //$query_row['release_date'],
-                                //$query_row['genre'],
-                                //$query_row['image'],
-                                //$query_row['description'],
+                                $query_row['artist'],
+                                $query_row['release_date'],
+                                $query_row['genre'],
+                                $query_row['image'],
+                                $query_row['description'],
                                 $query_row['audio']);
-            $songs[] = $song;
+            $musics[] = $music;
             //set the id for the movie
             //$song->setId($query_row["id"]);
             }

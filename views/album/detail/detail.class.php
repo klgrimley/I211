@@ -7,9 +7,9 @@
  *              The method accepts a Movie object and displays the details of the movie in a table.
  */
 
-class Music_Detail extends IndexView {
+class Album_Detail extends IndexView {
 
-    public function display($song) {
+    public function display($musics) {
         //display page header
         parent::displayHeader("Album Details");
 
@@ -24,17 +24,22 @@ class Music_Detail extends IndexView {
         <div class='song_list'>
         <ul>
         <?php
-        foreach ($song as $count => $song) {
+        foreach ($musics as $count => $music) {
                 //$id = $id->getId();
-                $song_title = $song->getSongName();
-                $audio = $song->getAudio();
+                $song_title = $music['song_name'];
+                $audio = $music['audio'];
                 
                 echo "<li><a href='". ABSOLUTE_PATH ."'/includes/audio/$audio>$song_title</a></li>";
             }
+            $image = $musics[0]['image'];
+            $album_title = $musics[0]['album_title'];
+            
+            echo "$image";
+            echo $album_title;
         ?>
         </ul>
         </div>
-        <a href="<?= base_url ?>/album/index">Back to album list</a>
+        <a href="<?= base_url ?>/index">Back to album list</a>
         <?php
         //display page footer
         parent::displayFooter();

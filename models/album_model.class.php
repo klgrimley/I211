@@ -5,7 +5,6 @@
  *
  * @author Forrest
  */
-
 class AlbumModel {
 
     //private data members
@@ -39,7 +38,7 @@ class AlbumModel {
 
         //execute the query
         $query = $this->dbConnection->query($sql);
-        
+
         //handle the result
         if ($query && $query->num_rows > 0) {
             //create an array to store all returned albums
@@ -50,11 +49,8 @@ class AlbumModel {
 
                 //create a Music object
                 $album = new Album(
-                                $query_row['album'],
-                                $query_row['artist'],
-                                $query_row['image'],
-                                $query_row['genre']);
-                
+                        $query_row['album'], $query_row['artist'], $query_row['image'], $query_row['genre']);
+
 
                 //set the id for the album
                 $album->setId($query_row["album_id"]);
@@ -62,6 +58,45 @@ class AlbumModel {
                 $albums[] = $album;
             }
             return $albums;
+        }
+
+        return false;
+    }
+
+    public function view_album($id) {
+        //the select ssql statement
+        $sql = "SELECT *
+FROM albums a, songs s
+WHERE a.album_id = $id
+AND a.album_id = s.album";
+
+        //execute the query
+        $query = $this->dbConnection->query($sql);
+
+        if ($query && $query->num_rows > 0) {
+
+
+
+            $musics = array();
+
+            while ($query_row = $query->fetch_assoc()) {
+                $musics[] = $query_row;
+            }
+//                $song = array[];
+//            //create a music object
+//            $music =  Album($query_row['song_name'],
+//                                $query_row['album'],
+//                                $query_row['artist'],
+//                                $query_row['release_date'],
+//                                $query_row['genre'],
+//                                $query_row['image'],
+//                                $query_row['description'],
+//                                $query_row['audio']);
+//            $musics[] = $music;
+//            //set the id for the movie
+//            //$song->setId($query_row["id"]);
+//            }
+            return $musics;
         }
 
         return false;
