@@ -19,6 +19,10 @@ class IndexView {
                 <link rel='shortcut icon' href='<?= base_url ?>' type='image/x-icon'>
                 <link type='text/css' rel='stylesheet' href='<?= base_url ?>/includes/style.css'>
                 <script src="<?= base_url ?>/includes/js/ajax_autosuggestion.js"></script>
+                <script type="text/javascript">
+                    var base_url = '<?= base_url ?>';
+                    var suggest_url = base_url + '/song/suggest/';
+                </script>
             </head>
             <body>
                 <div id="header">

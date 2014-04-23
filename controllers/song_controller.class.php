@@ -36,15 +36,15 @@ class SongController {
         echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>';
 
         // create the <titles> element
-        $output = '<titles>';
+        $output = '<songs>';
 
         // if there are movies returned, loop through them and add them to the output
         if ($songs) {
             foreach ($songs as $song)
-                $output .= '<title>' . $song->getSongName() . '</title>';
+                $output .= '<song>' . $song->getSongName() . '</song>';
         }
 
-        $output .= '</titles>';
+        $output .= '</songs>';
 
         echo $output;
     }

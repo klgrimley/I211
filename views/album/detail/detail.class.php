@@ -23,7 +23,13 @@ class Album_Detail extends IndexView {
             $image = $musics[0]['image'];
             echo "<h3>$artist</h3>";
             ?>
-            <div class='song_list' style='float: right;'>
+            <div class='detail_information' style='float: right;'>
+                <h4>About the Band:</h4>
+                <p><?= $description ?></p>
+            </div>
+            <img class="album_cover" src="<?= base_url ?>/includes/album_art/<?= $image ?>" style="float: right;" />
+            
+            <div class='song_list'>
                 <h4><?= $album_title ?></h4>
                 <h5>Track Listing:</h5>
                 <ol>
@@ -38,12 +44,6 @@ class Album_Detail extends IndexView {
                     ?>
                 </ol>
             </div>
-            <img class="album_cover" src="<?= base_url ?>/includes/album_art/<?= $image ?>" style="float: right;" />
-            <div class='detail_information'>
-                <h4>About the Band:</h4>
-                <p><?= $description ?></p>
-            </div>
-
             <!-- display album details -->
 
 
