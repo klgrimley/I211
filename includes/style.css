@@ -104,3 +104,17 @@ h3#login_button  {
     color: #555555;
     text-decoration: none;
 }
+
+.detail_wraper {
+    width: 65%;
+    margin: 0 auto;
+}
+
+.detail_information {
+    width: 35%;
+    text-align: justify;
+}
+
+.album_cover {
+    margin-right: 5%;
+}
