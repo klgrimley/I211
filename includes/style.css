@@ -90,7 +90,7 @@ h3.albums_page  {
 #login_div  {
     width: 100px;
     float: right;
-    margin-right: 50px;
+    margin-right: 100px;
 }
 
 h3#login_button  {
@@ -129,4 +129,8 @@ footer h6 {
     font-variant: small-caps;
     text-align: center;
     padding: 40px;
+}
+
+#searchbar {
+    margin: 50px 0 0 25px;
 }

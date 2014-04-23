@@ -25,14 +25,15 @@ class IndexView {
                     <div id="logo">
                         <a href="<?= base_url ?>/index"><img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" /></a>
                     </div>
+                    <div id="login_div"><a href="#"><h3 id="login_button">Login</h3></a></div>
                     <!--create the search bar -->
                     <div id="searchbar">
                         <form method="get" action="<?= base_url ?>/song/search">
                             Find the song you're looking for: <input name="song" id="song" onkeyup="handleKeyUp(event)" />
                             <input type="submit" value="Go" />
                         </form>
-                        <div id="login_div"><a href="#"><h3 id="login_button">Login</h3></a></div>
                         <div id="suggestionDiv"></div>
+                        
                     </div>
                 </div>
 

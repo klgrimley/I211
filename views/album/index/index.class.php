@@ -42,7 +42,9 @@ class Album_Index extends IndexView {
                 echo "<h3 class='albums_page'>Genre:</h3>$genre";
                 echo "</div>";
             }
-            echo '</div';
+            ?>
+</div>
+           <?php
         parent::displayFooter();
         
 
