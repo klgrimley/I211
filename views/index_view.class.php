@@ -16,8 +16,9 @@ class IndexView {
             <head>
                 <title> <?php echo $title ?> </title>
                 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-                <link rel='shortcut icon' href='<?= base_url ?> ' type='image/x-icon'>
+                <link rel='shortcut icon' href='<?= base_url ?>' type='image/x-icon'>
                 <link type='text/css' rel='stylesheet' href='<?= base_url ?>/includes/style.css'>
+                <script src="<?= base_url ?>/includes/js/ajax_autosuggestion.js"></script>
             </head>
             <body>
                <div id="header">
@@ -26,8 +27,8 @@ class IndexView {
                     </div>
                    <!--create the search bar -->
                     <div id="searchbar">
-                        <form method="get" action="<?= base_url ?>/album/search">
-                            Search album by title: <input name="album" id="album" onkeyup="handleKeyUp(event)" />
+                        <form method="get" action="<?= base_url ?>/song/search">
+                            Find the song you're looking for: <input name="song" id="song" onkeyup="handleKeyUp(event)" />
                             <input type="submit" value="Go" />
                         </form>
                         <div id="login_div"><a href="#"><h3 id="login_button">Login</h3></a></div>

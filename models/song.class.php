@@ -6,7 +6,7 @@
  * @author Forrest
  */
 
-class Music {
+class Song {
 
     //private data members
     private $id, $song_name, $album, $audio;

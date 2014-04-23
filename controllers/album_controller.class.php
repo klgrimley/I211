@@ -49,6 +49,8 @@ class AlbumController {
             $this->error($message);
         }
     }
+    
+    
 }
 
 ?>

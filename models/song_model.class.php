@@ -6,7 +6,7 @@
  * @author Forrest
  */
 
-class MusicModel {
+class SongModel {
 
     //private data members
     private $db;
@@ -48,21 +48,21 @@ class MusicModel {
             //loop through all rows in the returned recordsets
             while ($query_row = $query->fetch_assoc()) {
 
-                //create a Music object
-                $song = new Music($query_row['song_name'],
-                                $query_row['album'],
-                                $query_row['artist'],
-                                $query_row['release_date'],
-                                $query_row['genre'],
-                                $query_row['image'],
-                                $query_row['description'],
-                                $query_row['audio']);
-                
-
-                //set the id for the song
-                $song->setId($query_row["id"]);
+//                //create a Music object
+//                $song = new Music($query_row['song_name'],
+//                                $query_row['album'],
+//                                $query_row['artist'],
+//                                $query_row['release_date'],
+//                                $query_row['genre'],
+//                                $query_row['image'],
+//                                $query_row['description'],
+//                                $query_row['audio']);
+//                
+//
+//                //set the id for the song
+//                $song->setId($query_row["id"]);
                 //add the movie into the array
-                $songs[] = $song;
+//                $songs[] = $song;
             }
             return $songs;
         }
@@ -71,42 +71,38 @@ class MusicModel {
     }
 
     /*
-     * the view_music method needs serious work
+     * 
      */
 
-    public function view_music($id) {
+    public function search_songs($song_name) {
         //the select ssql statement
-        $sql = "SELECT *
-FROM albums a, songs s
-WHERE a.album_id = $id
-AND a.album_id = s.album";
+        $sql = "SELECT * FROM " . $this->db->getSongsTable() . " WHERE song_name LIKE '%" . $song_name . "%'";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
 
-        if ($query && $query->num_rows > 0) {
-            
-            $musics = array();
-            
-            while ($query_row = $query->fetch_assoc()) {
+        //search failed
+        if (!$query)
+            return false;
 
-            //create a music object
-            $music = new Music($query_row['song_name'],
-                                $query_row['album'],
-                                $query_row['artist'],
-                                $query_row['release_date'],
-                                $query_row['genre'],
-                                $query_row['image'],
-                                $query_row['description'],
-                                $query_row['audio']);
-            $musics[] = $music;
-            //set the id for the movie
-            //$song->setId($query_row["id"]);
-            }
-            return $songs;
+        //success, but no song found.
+        if ($query->num_rows == 0)
+            return 0;
+
+        //success at least 1 song found.
+        //create an array to store all the returned song(s)
+        $songs = array();
+
+        while ($query_row = $query->fetch_assoc()) {
+
+            //create a song object
+            $song = new Song($query_row['song_name'], $query_row['album'], $query_row['audio']);
+            $songs[] = $song;
+
+            //set the id for the song
+            $song->setId($query_row["song_id"]);
         }
-
-        return false;
+        return $songs;
     }
 
 }
