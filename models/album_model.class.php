@@ -49,7 +49,7 @@ class AlbumModel {
 
                 //create a Music object
                 $album = new Album(
-                        $query_row['album'], $query_row['artist'], $query_row['image'], $query_row['genre']);
+                        $query_row['album_title'], $query_row['artist'], $query_row['image'], $query_row['genre']);
 
 
                 //set the id for the album

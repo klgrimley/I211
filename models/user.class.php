@@ -9,7 +9,7 @@
 class User {
 
     //private data members
-    private $id, $song_name, $album, $artist, $release_date, $genre, $image, $description, $audio;
+    private $id, $username, $first_name, $last_name, $email, $password, $role;
 
     public function __construct($song_name, $album, $artist, $release_date, $genre, $image, $description, $audio) {
         $this->song_name = $song_name;
