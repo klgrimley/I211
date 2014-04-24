@@ -17,6 +17,7 @@ class Album_Detail extends IndexView {
         ?>
         <div class="detail_wraper">
             <?php
+            $id = $musics[0]['album_id'];
             $artist = $musics[0]['artist'];
             $description = $musics[0]['description'];
             $album_title = $musics[0]['album_title'];
@@ -35,7 +36,7 @@ class Album_Detail extends IndexView {
                 <ol>
                     <?php
                     foreach ($musics as $count => $music) {
-                        //$id = $id->getId();
+                        
                         $song_title = $music['song_name'];
                         $audio = $music['audio'];
 
@@ -46,8 +47,9 @@ class Album_Detail extends IndexView {
             </div>
             <!-- display album details -->
 
-
-            <a href="<?= base_url ?>/index">Back to album list</a>
+            
+             <a href="<?= base_url . "/album/edit/" . $id ?>">Make me the Edit Album Button</a>
+            <a href="<?= base_url ?>/index">make me the album list button</a>
         </div>
         <?php
         //display page footer

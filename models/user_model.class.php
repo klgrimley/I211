@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of music_controller
+ * Description of 
  *
  * @author Forrest
  */
@@ -28,13 +28,8 @@ class UserModel {
         }
     }
     
-    public function user_login(){
-        $login = new Login_User();
-        
-        $login->display();
-    }
     
-    public function validate_user_login($username, $password) {
+    public function validate_login($username, $password) {
         $sql = "SELECT * FROM ". $this->db->getUsersTable() . " WHERE username = $username AND password = $password";
     }
 

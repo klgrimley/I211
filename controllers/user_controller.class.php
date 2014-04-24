@@ -13,19 +13,25 @@ class UserController {
         $this->user_model = new UserModel();
     }
     
-    public function login() {
-        $user = $this->user_model->user_login();
-
-        //display login page
-        if ($user) {
-            $view = new Login_User();
-            $view->display();
-        } else {
-            //display an error
-            $message = "There was a problem displaying the Login Page.";
-            $this->error($message);
-        }
+    
+    public function login(){
+        $login = new Login_User();
+        
+        $login->display();
     }
+//    public function login() {
+//        $user = $this->user_model->user_login();
+//
+//        //display login page
+//        if ($user) {
+//            $view = new Login_User();
+//            $view->display();
+//        } else {
+//            //display an error
+//            $message = "There was a problem displaying the Login Page.";
+//            $this->error($message);
+//        }
+//    }
 
  
 }

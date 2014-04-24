@@ -49,8 +49,7 @@ class AlbumModel {
 
                 //create a Music object
                 $album = new Album(
-                        $query_row['album_title'], $query_row['artist'], $query_row['image'], $query_row['genre']);
-
+                        $query_row['album_title'], $query_row['artist'], $query_row['release_date'], $query_row['image'], $query_row['genre'], $query_row['description']);
 
                 //set the id for the album
                 $album->setId($query_row["album_id"]);
@@ -65,40 +64,44 @@ class AlbumModel {
 
     public function view_album($id) {
         //the select ssql statement
-        $sql = "SELECT *
-FROM albums a, songs s
-WHERE a.album_id = $id
-AND a.album_id = s.album";
+        $sql = "SELECT * FROM albums a, songs s WHERE a.album_id = $id AND a.album_id = s.album";
 
         //execute the query
         $query = $this->dbConnection->query($sql);
 
         if ($query && $query->num_rows > 0) {
-
-
-
             $musics = array();
 
             while ($query_row = $query->fetch_assoc()) {
                 $musics[] = $query_row;
             }
-//                $song = array[];
-//            //create a music object
-//            $music =  Album($query_row['song_name'],
-//                                $query_row['album'],
-//                                $query_row['artist'],
-//                                $query_row['release_date'],
-//                                $query_row['genre'],
-//                                $query_row['image'],
-//                                $query_row['description'],
-//                                $query_row['audio']);
-//            $musics[] = $music;
-//            //set the id for the movie
-//            //$song->setId($query_row["id"]);
-//            }
+
             return $musics;
         }
 
+        return false;
+    }
+
+    //edit an existing album in the database.
+    public function update_movie($id) {
+        //retrieve album details
+
+        $album_title = isset($_POST['album_title']) && ($_POST['album_title'] != "") ? $_POST['album_title'] : null;
+        $artist = isset($_POST['artist']) && ($_POST['artist'] != "") ? $_POST['artist'] : null;
+        $release_date = isset($_POST['release_date']) && ($_POST['release_date'] != "") ? $_POST['release_date'] : null;
+        $genre = isset($_POST['genre']) && ($_POST['genre'] != "") ? $_POST['genre'] : null;
+        $image = isset($_POST['image']) && ($_POST['image'] != "") ? $_POST['image'] : null;
+        $description = isset($_POST['description']) ? $_POST['description'] : null;
+
+        //make sure none are null
+        if ($album_title && $artist && $release_date && $genre && $image) {
+            //query string for update 
+            $sql = "UPDATE " . $this->db->getMovieTable() .
+                    " SET album_title='$album_title', artist='$artist', release_date='$release_date', genre='$genre', image='$image', description='$description' WHERE id='$id'";
+
+            //execute the query
+            return $this->dbConnection->query($sql);
+        }
         return false;
     }
 

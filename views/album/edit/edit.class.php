@@ -1,77 +1,47 @@
 <?php
 
-class Edit extends IndexView {
-//    private $name = $_GET['name'];
-//    private $artist = $_GET['artist'];
-//    private $album = $_GET['album'];
-//    private $genre = $_GET['genre'];
-//    private $release_date = $_GET['release_date'];
+class Album_Edit extends IndexView {
 
-}  
-?>
-<html>
-    <head>
-        <!--
-            Author: Sarah Kurt
-            Date: April 20, 2014
-        -->
+    public function display($album) {
+        //display page header
+        parent::displayHeader("Listen UP | Edit Album");
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Our Music Library</title>
-        
-    </head>
+        //retrieve movie details by calling get methods
+        $id = $album->getId();
+        $album_title = $album->getAlbum();
+        $artist = $album->getArtist();
+        $release_date = $album->getRelease_date();
+        $genre = $album->getGenre();
+        $image = $album->getImage();
+        $description = $album->getDescription();
+        ?>
 
-    <body>
-        <div id="wrapper">
-            <table border="0" cellspacing="0" cellpadding="10" width="100%">
-                <tr>
-                    <td colspan="3" id="navbar">
-                        <a href="index.html">Home</a> || <a href="listbooks.html">List Music</a>
-                    </td>
-                </tr>
-                <tr id="banner">
-                    <td style="padding: 10px 10px 0px 10px; width: 250px">
-            
-                    </td>
-                    <td width="680">
-                        <div id="maintitle">Our Music</div><br />
-                        <div id="mainsubtitle">Listen to our music</div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" id="mainbody">
-                        <h2>Music</h2>
-                        <form method="post" action="">
-                        <table border="0" cellspacing="0" cellpadding="5">
-                            <tr>
-                                <td width="65">Song Name</td>
-                                <td width="300"><input type="text" name="title" value="<?= "$name" ?>" size="40" /></td>
-                            </tr>
-                            <tr>
-                                <td>Artist:</td>
-                                <td><input type="text" name="artist" value="<?= "$artist" ?>" size="40" /></td>
-                            </tr>
-                            <tr>
-                                <td>Album:</td>
-                                <td><input type="text" name="album" value="<?= "$album" ?>" /></td>
-                            </tr>
-                            <tr>
-                                <td>Genre:</td>
-                                <td><input type="text" name="genre" value="<?= "$genre" ?>" /></td>
-                            </tr>
-                            <tr>
-                                <td>Release Date:</td>
-                                <td><input type="text" name="release_date" value="<?= "$release_date" ?>" /></td>
-                            </tr>
-                        </table>
-                            <input type="submit" value="Update Music" />
-                        </form>
-                        <br />
+        <div id="main_header">Edit Movie Details</div>
 
-                        <br />
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </body>
-</html>
+        <!-- display album details in a form -->
+        <form action='<?= base_url . "/movie/update/" . $id ?>' method="post">
+            <img src="<?= base_url ?>/includes/images/<?= $image ?>" alt="<?= $album_title ?>" title="<?= $album_title ?>" width="220" />
+            <label class="form_label" for="title">Title:</label>
+            <input class="form_input" name="title" size="40" value="<?= $album_title ?>">
+            <label class="form_label" for="artist">Artist:</label>
+            <input class="form_input" name="artist" size="40" value="<?= $artist ?>">
+            <label class="form_label" for="release_date">Release Date:</label>
+            <input class="form_input" name="release_date" value="<?= $release_date ?>">
+            <label class="form_label" for="genre">Genre:</label>
+            <input class="form_input" name="genre" value="<?= $genre ?>">
+            <label class="form_label" for="image">Image:</label>
+            <input class="form_input" name="image" value="<?= $image ?>">
+            <label class="form_label" for="description">Description:</label> 
+            <textarea name="description" rows="6" cols="60"><?= $description ?></textarea>
+            <input class="form_button" type="submit" value="Submit" />
+            <input class="form_button" type="button" value="Cancel" onclick='window.location.href = "<?= base_url . "/album/detail/" . $id ?>"' />
+            <a href="<?= base_url ?>/album/index">Turn me into a button</a>
+        </form>
+        <?php
+        //display page footer
+        parent::displayFooter();
+    }
+
+//end of display method
+}
+

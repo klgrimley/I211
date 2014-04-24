@@ -2,13 +2,15 @@
 
 class Album {
 //private data members
-    private $id, $album, $artist, $genre, $image;
+    private $id, $album, $artist, $release_date, $genre, $image, $description;
 
-    public function __construct($album, $artist, $image, $genre) {
+    public function __construct($album, $artist, $release_date, $image, $genre, $description) {
         $this->album = $album;
         $this->artist = $artist;
+        $this->release_date = $release_date;
         $this->genre = $genre;
         $this->image = $image;
+        $this->description = $description;
     }
     
     //getter methods
@@ -31,7 +33,15 @@ class Album {
     public function getImage() {
         return $this->image;
     }
+    
+    public function getRelease_date() {
+        return $this->release_date;
+    }
 
+    public function getDescription() {
+        return $this->description;
+    }
+    
     //set album id
     public function setId($id) {
         $this->id = $id;
