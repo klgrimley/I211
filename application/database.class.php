@@ -60,7 +60,7 @@ class Database {
     }
 
     //returns the name of the table that stores users
-    public function getUserTable() {
+    public function getUsersTable() {
         return $this->param['tblUser'];
     }
 

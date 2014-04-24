@@ -5,7 +5,7 @@
 html,body,div {
     margin: 0;
     padding: 0;
-
+    background: rgba(204, 51, 51, 0.01);
 }
 
 #header{
@@ -74,6 +74,7 @@ html,body,div {
 .content_wraper {
     width: 90%;
     margin: 0 auto;
+    background: transparent;
 }
 
 .album {
@@ -108,11 +109,13 @@ h3#login_button  {
 .detail_wraper {
     width: 65%;
     margin: 0 auto;
+    background: transparent;
 }
 
 .detail_information {
     width: 35%;
     text-align: justify;
+    background: transparent;
 }
 
 .album_cover {
@@ -140,7 +143,7 @@ footer h6 {
     margin-left: 17.25%;
     background: rgba(255,255,255,0.9);
     width: 180px;
-    color: #000;
+    color: #222;
     border: 1px solid #cc3333;
     cursor: pointer;
     z-index: 10;
@@ -152,4 +155,8 @@ footer h6 {
 
 h4 {
     margin: 0;
+}
+
+.song_list, .album  {
+    background: transparent;
 }
