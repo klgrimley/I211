@@ -34,12 +34,15 @@ class Album_Index extends IndexView {
                 $album_title = $album->getAlbum();
                 $album_art = $album->getImage();
                 $genre = $album->getGenre();
+                $release_date = $album->getRelease_date();
                 
                 echo "<div class='album'>";
                 echo "<p><a href='" . base_url . "/album/detail/$id'><img src='" . base_url . "/includes/album_art/$album_art' /></a></p>";
-                echo "<h3 class='albums_page'>Band Name:</h3>$artist";
+                echo "<div class='rolloverinfo'><h3 class='albums_page'>Band Name:</h3>$artist";
                 echo "<h3 class='albums_page'>Album:</h3>$album_title";
                 echo "<h3 class='albums_page'>Genre:</h3>$genre";
+                echo "<h3 class='albums_page'>Release Date:</h3>$release_date";
+                echo "</div>";
                 echo "</div>";
             }
             ?>

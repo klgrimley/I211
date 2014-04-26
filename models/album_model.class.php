@@ -81,9 +81,39 @@ class AlbumModel {
 
         return false;
     }
+    
+    public function edit_album($id) {
+        //Construct the MySQL select statement.
+        $sql = "SELECT * FROM " . $this->db->getAlbumsTable() . " WHERE album_id = $id";
+
+        //execute the query
+        $query = $this->dbConnection->query($sql);
+
+        //handle the result
+        if ($query && $query->num_rows > 0) {
+            //create an array to store all returned albums
+            $albums = array();
+
+            //loop through all rows in the returned recordsets
+            while ($query_row = $query->fetch_assoc()) {
+
+                //create a Music object
+                $album = new Album(
+                        $query_row['album_title'], $query_row['artist'], $query_row['release_date'], $query_row['image'], $query_row['genre'], $query_row['description']);
+
+                //set the id for the album
+                $album->setId($query_row["album_id"]);
+                //add the album into the array
+                $albums[] = $album;
+            }
+            return $albums;
+        }
+
+        return false;
+    }
 
     //edit an existing album in the database.
-    public function update_movie($id) {
+    public function update_album($id) {
         //retrieve album details
 
         $album_title = isset($_POST['album_title']) && ($_POST['album_title'] != "") ? $_POST['album_title'] : null;
@@ -96,7 +126,7 @@ class AlbumModel {
         //make sure none are null
         if ($album_title && $artist && $release_date && $genre && $image) {
             //query string for update 
-            $sql = "UPDATE " . $this->db->getMovieTable() .
+            $sql = "UPDATE " . $this->db->getAlbumsTable() .
                     " SET album_title='$album_title', artist='$artist', release_date='$release_date', genre='$genre', image='$image', description='$description' WHERE id='$id'";
 
             //execute the query

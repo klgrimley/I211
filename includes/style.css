@@ -84,6 +84,21 @@ html,body,div {
     font-size: .9em;
 }
 
+.album img:hover {
+    opacity:.2;
+    
+}
+
+.rolloverinfo{
+    display: inline-block;
+    width:20%;
+    margin: 0 auto;
+    font-size: .9em;
+    z-index: -1;
+    position:absolute;
+    top:335px;
+    padding-left: 10px;
+}
 h3.albums_page  {
     margin: 5px 0 0 0;
 }
@@ -97,6 +112,7 @@ h3.albums_page  {
 h3#login_button  {
     padding: 20px 5px;
     background: #dddddd;
+    color: #cc3333;
     text-align: center;
     border-radius: 50%;
 }
@@ -123,7 +139,6 @@ h3#login_button  {
 }
 
 footer {
-    margin: 75px 0 0 0;
     background-color:#cc3333;
 }
 
@@ -138,9 +153,13 @@ footer h6 {
     margin: 50px 0 0 25px;
 }
 
+.search_bar {
+    display: inline;
+}
+
 #suggestionDiv {
-    position:relative;
-    margin-left: 17.25%;
+    position: relative;
+    margin-left: 16.25%;
     background: rgba(255,255,255,0.9);
     width: 180px;
     color: #222;
@@ -159,4 +178,70 @@ h4 {
 
 .song_list, .album  {
     background: transparent;
+    margin-bottom: 75px;
+}
+
+.left_column {
+    width: 49%;
+    display: inline-table;
+   
+    background: transparent;
+}
+
+.right_column {
+    width: 48%;
+    padding: 0 0 0 20px;
+    display: inline-table;
+    border-left: 1px solid #cc3333;
+    background: transparent;
+}
+
+input {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.login_button {
+    display: inline;
+    margin: 15px 0 25px 5px;
+    background: #dddddd;
+    color: #cc3333;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 50%;
+}
+
+.admin_button {
+    display: inline;
+    margin: 15px 0 0 10px;
+    background: #dddddd;
+    color: #cc3333;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 50%;
+}
+
+.common_button {
+    display: inline;
+    margin: 0 0 25px 10px;
+    background: #dddddd;
+    color: #cc3333;
+    border: none;
+    padding: 15px 10px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+ol {
+    margin-bottom: 50px;
+}
+
+.go_button {
+    display: inline;
+    margin: 15px 0 10px 5px;
+    background: #dddddd;
+    color: #cc3333;
+    border: none;
+    padding: 7px 5px;
+    border-radius: 50%;
 }

@@ -62,7 +62,7 @@ class AlbumController {
     public function edit($id) {
         //retrieve the specific album
         $album = $this->album_model->view_album($id);
-        
+       // echo sizeof($album);
         //display album details in a form to be modified
         if ($album) {
             $view = new Album_Edit();
@@ -83,7 +83,7 @@ class AlbumController {
             $view->display($id);
         } else {
             //display an error
-            $message = "There was a problem updating the album. The movie id '" . $id . "' does not exist in the database.";
+            $message = "There was a problem updating the album. The album id '" . $id . "' assoctiated with the album does not exist in the database.";
             $this->error($message);
         }
     }

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
  * Author: Sarah Kurt
  * Date: 04/15/14
@@ -33,10 +34,12 @@ class IndexView {
                     <!--create the search bar -->
                     <div id="searchbar">
                         <form method="get" action="<?= base_url ?>/song/search">
-                            Find the song you're looking for: <input name="song" id="song" onkeyup="handleKeyUp(event)" />
-                            <input type="submit" value="Go" />
+                            <label for="song">Find the song you're looking for:</label>
+                            <input class="search_bar" name="song" id="song" onkeyup="handleKeyUp(event)" />
+                            <input class="search_bar go_button" type="submit" value="Find" />
+                            <div id="suggestionDiv"></div>
                         </form>
-                        <div id="suggestionDiv"></div>
+                        
                         
                     </div>
                 </div>

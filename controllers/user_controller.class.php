@@ -15,24 +15,45 @@ class UserController {
     
     
     public function login(){
-        $login = new Login_User();
+        $login = new User_Login();
         
         $login->display();
     }
-//    public function login() {
-//        $user = $this->user_model->user_login();
-//
-//        //display login page
-//        if ($user) {
-//            $view = new Login_User();
-//            $view->display();
-//        } else {
-//            //display an error
-//            $message = "There was a problem displaying the Login Page.";
-//            $this->error($message);
-//        }
-//    }
+    
+    public function error($message) {
+        //create an object of the Error class
+        $error = new User_Error();
 
+        //display the error page
+        $error->display($message);
+    }
+    
+    public function  verify() {
+        
+        $returningUser = $this->user_model->verify_user();
+        
+        if($returningUser) {
+            $view = new User_Verify();
+            $view->display();
+        }else{
+            $message = "Login failed. Please try again";
+            $this->error($message);
+        }
+    }
+    
+    public function register() {
+        
+        $newUser = $this->user_model->register_user();
+        
+        if($newUser) {
+            $view = new User_Register();
+            $view->display();
+        }else{
+            $message = "Registering failed. Please try again later.";
+            $this->error($message);
+        }
+        
+    }
  
 }
 

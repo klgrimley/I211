@@ -44,13 +44,13 @@ class Album_Detail extends IndexView {
                     }
                     ?>
                 </ol>
-            </div>
-            <!-- display album details -->
+           
+            
 
             
-             <a href="<?= base_url . "/album/edit/" . $id ?>">Make me the Edit Album Button</a>
-            <a href="<?= base_url ?>/index">make me the album list button</a>
-        </div>
+             <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
+            <a class="common_button" href="<?= base_url ?>/index">Album List</a>
+        </div>  </div>
         <?php
         //display page footer
         parent::displayFooter();

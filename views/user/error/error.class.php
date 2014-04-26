@@ -7,7 +7,7 @@
  *
  */
 
-class Album_Error extends IndexView {
+class User_Error extends IndexView {
 
     public function display($message) {
 
