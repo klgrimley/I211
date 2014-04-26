@@ -19,11 +19,17 @@ class IndexView {
                 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
                 <link rel='shortcut icon' href='<?= base_url ?>' type='image/x-icon'>
                 <link type='text/css' rel='stylesheet' href='<?= base_url ?>/includes/style.css'>
+                <link href="<?= base_url ?>/includes/styles.css" rel="stylesheet" type="text/css" />
                 <script src="<?= base_url ?>/includes/js/ajax_autosuggestion.js"></script>
+                <script type="text/javascript" src="<?= base_url ?>/includes/js/jquery-1.7.2.min.js"></script>
+                <script type="text/javascript" src="<?= base_url ?>/includes/js/jquery-ui-1.8.21.custom.min.js"></script>
+                <script type="text/javascript" src="<?= base_url ?>/includes/js/main.js"></script>
                 <script type="text/javascript">
                     var base_url = '<?= base_url ?>';
                     var suggest_url = base_url + '/song/suggest/';
                 </script>
+               
+                
             </head>
             <body>
                 <div id="header">
