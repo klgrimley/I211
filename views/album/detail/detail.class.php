@@ -29,28 +29,31 @@ class Album_Detail extends IndexView {
                 <p><?= $description ?></p>
             </div>
             <img class="album_cover" src="<?= base_url ?>/includes/album_art/<?= $image ?>" style="float: right;" />
-            
+
             <div class='song_list'>
                 <h4><?= $album_title ?></h4>
                 <h5>Track Listing:</h5>
-                <ol>
-                    <?php
-                    foreach ($musics as $count => $music) {
-                        
-                        $song_title = $music['song_name'];
-                        $audio = $music['audio'];
+                
+                    <ol class="song_titles">
+                        <?php
+                        foreach ($musics as $count => $music) {
 
-                        echo "<li><a href='" . ABSOLUTE_PATH . "'/includes/audio/$audio>$song_title</a></li>";
-                    }
-                    ?>
-                </ol>
-           
-            
+                            $song_title = $music['song_name'];
+                            $audio = $music['audio'];
 
-            
-             <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
-            <a class="common_button" href="<?= base_url ?>/index">Album List</a>
-        </div>  </div>
+                            echo "<li>$song_title</li><br><audio src='" . ABSOLUTE_PATH . "/includes/audio/$audio' type='audio/mpeg' preload='auto' controls></audio><br><br>";
+                        }
+                        ?>
+                    </ol>
+                
+
+
+
+
+                <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
+                <a class="common_button" href="<?= base_url ?>/index">Album List</a>
+            </div> 
+        </div>
         <?php
         //display page footer
         parent::displayFooter();

@@ -123,7 +123,7 @@ h3#login_button  {
 }
 
 .detail_wraper {
-    width: 65%;
+    width: 80%;
     margin: 0 auto;
     background: transparent;
 }
@@ -176,7 +176,17 @@ h4 {
     margin: 0;
 }
 
-.song_list, .album  {
+.song_list  {
+    background: transparent;
+    margin-bottom: 75px;
+    width: 40%;
+}
+
+ol.song_titles {
+   
+}
+
+.album {
     background: transparent;
     margin-bottom: 75px;
 }
@@ -189,7 +199,7 @@ h4 {
 }
 
 .right_column {
-    width: 48%;
+    width: 40%;
     padding: 0 0 0 20px;
     display: inline-table;
     border-left: 1px solid #cc3333;
@@ -209,6 +219,7 @@ input {
     border: none;
     padding: 15px 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .admin_button {
@@ -219,6 +230,7 @@ input {
     border: none;
     padding: 15px 10px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .common_button {
@@ -230,6 +242,7 @@ input {
     padding: 15px 10px;
     border-radius: 50%;
     text-decoration: none;
+    cursor: pointer;
 }
 
 ol {
@@ -244,4 +257,5 @@ ol {
     border: none;
     padding: 7px 5px;
     border-radius: 50%;
+     cursor: pointer;
 }

@@ -62,7 +62,7 @@ class AlbumController {
     public function edit($id) {
         //retrieve the specific album
         $album = $this->album_model->view_album($id);
-       // echo sizeof($album);
+       //echo sizeof($album);
         //display album details in a form to be modified
         if ($album) {
             $view = new Album_Edit();
