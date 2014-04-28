@@ -129,9 +129,11 @@ h3#login_button  {
 }
 
 .detail_information {
-    width: 35%;
+    width: 31%;
+    margin: 0 auto;
     text-align: justify;
     background: transparent;
+    float: right;
 }
 
 .album_cover {
@@ -178,8 +180,9 @@ h4 {
 
 .song_list  {
     background: transparent;
-    margin-bottom: 75px;
-    width: 40%;
+    width: 31%;
+    margin: 0 auto 75px;
+    float: left;
 }
 
 ol.song_titles {
@@ -259,3 +262,12 @@ ol {
     border-radius: 50%;
      cursor: pointer;
 }
+
+.middle {
+    width: 35%;
+    margin: 0 auto;
+    
+}
+
+
+
