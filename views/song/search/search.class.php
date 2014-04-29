@@ -7,7 +7,8 @@ class Song_Search extends IndexView {
         //display page header
         parent::displayHeader("List of Found Songs");
         ?>
-        <div id="main_header">Songs that we have</div>
+<div class="content_wraper"</div>
+        <div id="main_header"><h3>Songs that we have that match your search</h3></div>
 
         <!-- display the table header -->
         
@@ -17,23 +18,19 @@ class Song_Search extends IndexView {
             } else {
                 //insert one row into the table for each movie
                 foreach ($query as $song) {
-                    $id = $song->getId();
                     $song_name = $song->getSongName();
                     $album_id = $song->getAlbum();
-                    $audio = $song->getAudio();
-
-                    
+                    echo "<div class='song_bounce'";
                     echo "<p>$song_name</p>";
-                    echo "<p>$id</p>";
-                    echo "<p>$audio</p>";
-                    echo "<p><a href='" . base_url . "/album/detail/$album_id'>More about<i> $album_id</i></a></p>";
-                   
+                    echo "<p><a href='" . base_url . "/album/detail/$album_id'>Take me to the Album!</a></p>";
+                    echo '</div>';
                 }
             }
             ?> 
-        </table> <!-- the end of the table -->
-
-        <a href="<?= base_url ?>/index">This needs to be a button</a>
+        <br><br><br>
+        <a class="common_button" href="<?= base_url ?>/index">Album List</a>
+        <br><br><br><br>
+</div>
         <?php
         //display page footer
         parent::displayFooter();

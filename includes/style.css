@@ -266,7 +266,12 @@ ol {
 .middle {
     width: 35%;
     margin: 0 auto;
-    
+}
+
+.song_bounce {
+    display: inline-table;
+    width: 16%;
+    margin: 0 auto;
 }
 
 

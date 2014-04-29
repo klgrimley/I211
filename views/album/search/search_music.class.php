@@ -18,8 +18,6 @@ if(isset($_GET['name'])) {
     $name = $_GET['name'];
     
     //search the database for music
-   // $movie_manager = new MovieManager();
-    //$movies = $movie_manager->search_movie($title);
     
     //display matched music
     $search = new SearchMusic();
@@ -30,12 +28,9 @@ if(isset($_GET['name'])) {
     public function getSuggest() {
     $name = $_GET['name'];
 
-//$movie_manager = new MovieManager();
-//$movies = $movie_manager->search_movie($title);
+/*echo '<?xml version="1.0" encoding="UTF-8"?>';
 
-echo '<?xml version="1.0" encoding="UTF-8"?>';
-
-$output = '<names>';
+$output = '<names>';*/
 
 if($musics) {
     foreach ($musics as $music)
@@ -72,7 +67,7 @@ echo $output;
 
                     echo "<tr>";
                     echo "<td>$name</td>";
-                    echo "<td>$artist</td>";
+                    //echo "<td>$artist</td>";
                     echo "<td>$album</td>";
                     echo "</tr>";
                 }
