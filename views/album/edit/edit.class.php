@@ -36,9 +36,9 @@ class Album_Edit extends IndexView {
                 <label for="description">Description:</label>
                 <textarea name="description" id="description" rows="6" cols="60"><?= $description ?></textarea>
                 <input class="admin_button" type="submit" value="Submit" />
-                <input class="admin_button"type="button" value="Cancel" onclick='window.location.href = "<?= base_url . "/album/detail/" . $id ?>"' />
+                <input class="admin_button" type="button" value="Cancel" onclick='window.location.href = "<?= base_url . "/album/detail/" . $id ?>"' />
             </div>
-            <div class="right_column">
+<!--            <div class="right_column">
                 
                         <?php
                         foreach ($albums as $count => $album) {
@@ -50,7 +50,7 @@ class Album_Edit extends IndexView {
                             echo "<input name='$count' id='$count' value='$audio_file'><br>";
                         }
                         ?>
-            </div>
+            </div>-->
             
            
             </div>

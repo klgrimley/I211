@@ -62,14 +62,13 @@ class AlbumController {
     public function edit($id) {
         //retrieve the specific album
         $album = $this->album_model->view_album($id);
-       //echo sizeof($album);
         //display album details in a form to be modified
         if ($album) {
             $view = new Album_Edit();
             $view->display($album);
         } else {
             //display an error
-            $message = "We couldn't get this album because there is now album with the id of '" . $id . ".";
+            $message = "We couldn't get this album because there is no album with the id of '" . $id . ".";
             $this->error($message);
         }
     }
