@@ -1,16 +1,10 @@
 <?php
-session_start();
-/*
- * Author: Sarah Kurt
- * Date: 04/15/14
- * Name: edit.class.php
- * Description: Allows admins to edit the site
- */
-
 class IndexView {
-
     //this method displays the page header
     protected function displayHeader($title) {
+        @session_start();
+        if(!isset($_SESSION['role']))
+            $_SESSION['role'] = 1;
         ?>
         <!DOCTYPE html>
         <html>
@@ -36,7 +30,13 @@ class IndexView {
                     <div id="logo">
                         <a href="<?= base_url ?>/index"><img src="<?= base_url ?>/includes/images/title.gif" width="204" height="68" /></a>
                     </div>
+                    <?php
+                    if($_SESSION['role'] == 2){?>
+                    <div id="login_div"><a href="<?= base_url ?>/user/logout"><h3 id="login_button">Logout</h3></a></div>
+                    <?php }else{?>
                     <div id="login_div"><a href="<?= base_url ?>/user/login"><h3 id="login_button">Login</h3></a></div>
+                    <?php } ?>
+                    
                     <!--create the search bar -->
                     <div id="searchbar">
                         <form method="get" action="<?= base_url ?>/song/search">

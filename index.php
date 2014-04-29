@@ -9,7 +9,7 @@
 require_once ("application/autoloader.class.php");
 
 //define a constant for the application url;
-define("base_url", "http://localhost/GitHub/Final_Project");
-define('ABSOLUTE_PATH', 'C:/xampp/htdocs/GitHub/Final_Project');
+define("base_url", "http://localhost/I211/Final_Project");
+define('ABSOLUTE_PATH', 'C:/xampp/htdocs/I211/Final_Project');
 
 Dispatcher::dispatch();

@@ -30,11 +30,18 @@ class UserController {
     
     public function  verify() {
         
-        $returningUser = $this->user_model->verify_user();
+        $username = isset($_POST['username']) && ($_POST['username'] != "") ? $_POST['username'] : null;
+        $password = isset($_POST['password']) && ($_POST['password'] != "") ? $_POST['password'] : null;
+        
+        $returningUser = $this->user_model->verify_user($username, $password);
         
         if($returningUser) {
             $view = new User_Verify();
             $view->display();
+            @session_start();
+            $_SESSION['role'] = $returningUser->getRole();
+            $_SESSION['firstname'] = $returningUser->getFirstName();
+            $_SESSION['lastname'] = $returningUser->getLastName();
         }else{
             $message = "Login failed. Please try again";
             $this->error($message);
@@ -43,16 +50,22 @@ class UserController {
     
     public function register() {
         
-        $newUser = $this->user_model->register_user();
-        
-        if($newUser) {
-            $view = new User_Register();
-            $view->display();
+        if($this->user_model->register_user()) {
+           $view = new User_Register();
+           $view->display();
         }else{
             $message = "Registering failed. Please try again later.";
             $this->error($message);
         }
         
+    }
+    
+    public function logout() {
+        session_start();
+        session_destroy();
+        
+        $view = new User_Logout();
+        $view->display();
     }
  
 }

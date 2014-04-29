@@ -36,9 +36,11 @@ class Album_Detail extends IndexView {
                     }
                     ?>
                 </ol>
-
-                <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
                 <a class="common_button" href="<?= base_url ?>/index">Album List</a>
+                <?php ?>
+                <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
+   
+                
             </div> 
             <div class='detail_information inline'>
                 <h4>About the Band:</h4>
@@ -46,7 +48,7 @@ class Album_Detail extends IndexView {
             </div>
             <div class="middle inline" >
                 <img class="album_cover" src="<?= base_url ?>/includes/album_art/<?= $image ?>" />
-
+                
                 <div class="player">
                     <div class="pl"></div>
                     <div class="title"></div>
