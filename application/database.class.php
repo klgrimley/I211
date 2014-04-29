@@ -16,7 +16,7 @@ class Database {
         'database' => 'musictime',
         'tblSongs' => 'songs',
         'tblAlbums' => 'albums',
-        'tblUser' => 'users'
+        'tblUsers' => 'users'
     );
     //define the database connection object
     private $objDBConnection = NULL;
@@ -76,7 +76,7 @@ class Database {
 
     //returns the name of the table that stores users
     public function getUsersTable() {
-        return $this->param['tblUser'];
+        return $this->param['tblUsers'];
     }
 
     

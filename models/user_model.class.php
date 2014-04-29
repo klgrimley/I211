@@ -64,7 +64,7 @@ class UserModel {
         $password = isset($_POST['password']) && ($_POST['password'] != "") ? $_POST['password'] : null;
 
         if ($firstname && $lastname && $username && $email && $password) {
-            $sql = "INSERT INTO " . $this->db->getUsersTable() . "  VALUES (NULL '$username', '$firstname', '$lastname', '$email', '$password' '')";
+            $sql = "INSERT INTO " . $this->db->getUsersTable() . " (username, first_name, last_name, email, password) VALUES ('$username', '$firstname', '$lastname', '$email', '$password')";
 
             return $this->dbConnection->query($sql);
         } else {
