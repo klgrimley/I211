@@ -32,7 +32,9 @@ class IndexView {
                     </div>
                     <?php
                     if($_SESSION['role'] == 2){?>
+                    
                     <div id="login_div"><a href="<?= base_url ?>/user/logout"><h3 id="login_button">Logout</h3></a></div>
+                    <div id="welcome">Welcome back <?=  $_SESSION['firstname'] ." ". $_SESSION['lastname']?></div>
                     <?php }else{?>
                     <div id="login_div"><a href="<?= base_url ?>/user/login"><h3 id="login_button">Login</h3></a></div>
                     <?php } ?>

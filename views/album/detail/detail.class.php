@@ -37,9 +37,9 @@ class Album_Detail extends IndexView {
                     ?>
                 </ol>
                 <a class="common_button" href="<?= base_url ?>/index">Album List</a>
-                <?php ?>
+                <?php if($_SESSION['role'] == 2){?>
                 <a class="common_button" href="<?= base_url . "/album/edit/" . $id ?>">Edit Album</a>
-   
+                <?php } ?>
                 
             </div> 
             <div class='detail_information inline'>

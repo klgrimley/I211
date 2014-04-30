@@ -274,5 +274,9 @@ ol {
     margin: 0 auto;
 }
 
+#welcome {
+    float: right;
+    margin: 85px -150px 0 0;
+}
 
 
